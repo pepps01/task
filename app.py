@@ -16,8 +16,6 @@ def hello_world():
     try:
         if request.method=="GET":
             visitor_name = request.args.get('visitor_name')
-            print("API_KEY",API_KEY)
-            
             # location_namer = 
             ip_address= request.environ['REMOTE_ADDR']
             temperature=0
@@ -28,7 +26,7 @@ def hello_world():
 
             if response.status_code == 200:
                 data = response.json()
-
+              
                 city = data.get('city')
                 temperature = get_temperature(data.get('latitude'),data.get('longitude'), API_KEY)
 
@@ -36,7 +34,6 @@ def hello_world():
                     "client_ip": ip_address,
                     "location":city,
                     "greeting":f"Hello,{visitor_name}!, the temperature is {temperature} degrees Celsius in {city}",
-                    "API_KEY":API_KEY
                 }
                 return jsonify(result)
             else:
