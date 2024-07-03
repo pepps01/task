@@ -29,7 +29,7 @@ def hello_world():
             if response.status_code == 200:
                 data = response.json()
 
-                city = data['city']
+                city = data.get('city')
                 temperature = get_temperature(data.get('latitude'),data.get('longitude'), API_KEY)
 
                 result = {
