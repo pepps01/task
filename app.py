@@ -11,7 +11,7 @@ def world():
 def hello_world():
     try:
         if request.method=="GET":
-            visitor_name = request.args.get('vistor_name')
+            visitor_name = request.args.get('visitor_name')
             if visitor_name:
                 ip_address=request.environ['REMOTE_ADDR']
                 api_key="0c3133342a2344fd6d7696da0bb6f4b9"
