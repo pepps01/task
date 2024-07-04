@@ -17,9 +17,6 @@ def hello_world():
         if request.method=="GET":
             visitor_name = request.args.get('visitor_name')
             # location_namer = 
-
-
-            
             ip_address= request.environ['REMOTE_ADDR']
             temperature=0
             city=""
@@ -29,7 +26,6 @@ def hello_world():
 
             if response.status_code == 200:
                 data = response.json()
-              
                 temperature = get_temperature(data.get('latitude'),data.get('longitude'), API_KEY)
 
                 city = "Lagos"
