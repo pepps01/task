@@ -27,13 +27,13 @@ def hello_world():
             if response.status_code == 200:
                 data = response.json()
               
-                city = data.get('city')
                 temperature = get_temperature(data.get('latitude'),data.get('longitude'), API_KEY)
 
+                city = "Lagos"
                 result = {
                     "client_ip": ip_address,
                     "location":city,
-                    "greeting":f"Hello,{visitor_name}!, the temperature is {temperature} degrees Celsius in {city}",
+                    "greetings":f"Hello,{visitor_name}!, the temperature is {temperature} degrees Celsius in {city}",
                 }
                 return jsonify(result)
             else:
