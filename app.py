@@ -17,6 +17,9 @@ def hello_world():
         if request.method=="GET":
             visitor_name = request.args.get('visitor_name')
             # location_namer = 
+
+
+            
             ip_address= request.environ['REMOTE_ADDR']
             temperature=0
             city=""
